@@ -13,7 +13,8 @@ I present my first website created in TypeScript. This restaurant's website is i
 - VanillaTilt
 
 # Link
-Link to visit my website: https://logan-test-pyjv.vercel.app/
+Link to visit my website: https://logans-taco.vercel.app/
+
 Have Fun!
 
 # Saying thank you

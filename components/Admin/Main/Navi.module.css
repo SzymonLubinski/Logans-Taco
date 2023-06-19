@@ -1,0 +1,31 @@
+.navi{
+    height: 100%;
+}
+.title{
+    text-align: center;
+    border-bottom: 3px solid darkred;
+}
+.links{
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+.links a{
+    width: 100%;
+    text-decoration: none;
+}
+.links a:visited{
+    color: black;
+}
+.links a div{
+    width: 100%;
+    display: flex;
+    margin-top: 30px;
+}
+.links a div p{
+    margin-left: 10px;
+}
+.img{
+    width: 20%;
+    height: auto;
+}

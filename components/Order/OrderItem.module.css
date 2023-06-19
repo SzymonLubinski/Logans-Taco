@@ -1,0 +1,30 @@
+.item{
+    display: flex;
+    justify-content: space-between;
+    padding: 1px 1vw;
+    text-align: center;
+    border-top: 3px solid darkred;
+}
+.left{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.left div{
+    display: flex;
+    flex-direction: column;
+    margin-right: 1vw;
+}
+.left div button{
+    cursor: pointer;
+}
+.left p{
+    font-size: 24px;
+}
+.left div button{
+    margin: 2px 0;
+    padding: 0.3vh 1vw;
+}
+.right{
+    margin: auto 0;
+}

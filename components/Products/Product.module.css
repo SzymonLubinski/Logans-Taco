@@ -1,0 +1,109 @@
+.card{
+    width: 40%;
+    min-width: 300px;
+    max-width: 500px;
+    padding: 10px;
+    margin: 10px;
+    background: #7C9B35;
+    border: 3px solid darkred;
+}
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.container .box{
+    position: relative;
+    width: 400px;
+    height: 300px;
+    margin: 10px;
+    border-radius: 20px;
+}
+.container .box .title{
+    font-size: 38px;
+    margin-top: 5px;
+    width: 100%;
+    opacity: 0.5;
+    transform-style: preserve-3d;
+    transform: translate3d(0,0, 50px);
+    text-align: center;
+    color: red;
+}
+.card:hover .title{
+    opacity: 1;
+}
+.container .box .product{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    width: 300px;
+    height: 220px;
+    transition: 0.5s;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%, -50%, 0) rotate(-15deg);
+}
+.card:hover .product{
+    transform: translate3d(-50%, -50%, 90px) rotate(-8deg);
+}
+.container .box .circle{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    width: 230px;
+    height: 230px;
+    opacity: 1;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%, -50%, 0);
+    transition: 0.5s;
+    border-radius: 50%;
+    background: #9AC142;
+}
+.container .box .btn{
+    width: 50%;
+    position: absolute;
+    padding: 10px 25px;
+    margin: auto;
+    bottom: 10px;
+    opacity: 0.3;
+    transform-style: preserve-3d;
+    transition: 0.5s;
+    transform: translate3d(55%, 0, 0);
+    border-radius: 30px;
+    background-image: linear-gradient(red, yellow);
+    color: black;
+}
+.container .box:hover .btn{
+    bottom: 15px;
+    opacity: 1;
+}
+.info p{
+    margin: 0;
+    font-size: 24px;
+}
+.cardDescription{
+    display: flex;
+    justify-content: space-between;
+}
+.form{
+    text-align: right;
+    margin: auto 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+.form button{
+    font-family: "Comic Sans MS", Arial, Helvetica, sans-serif;
+    color: white;
+    background: #ca211a;
+    border: 1px solid #ca211a;
+    border-radius: 20px;
+    padding: 0.25rem 2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+.form button:hover,
+.form button:active {
+    background-color: #9d1914;
+    border-color: #9d1914;
+}

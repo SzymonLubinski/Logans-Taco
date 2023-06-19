@@ -1,0 +1,44 @@
+.menu{
+    background: #9AC142;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+}
+.menu div{
+    padding-top: 20px;
+}
+.list{
+    list-style: none;
+    width: 20%;
+    margin: auto;
+    padding: 0;
+}
+.list li{
+    padding-top: 20px;
+    width: 100%;
+}
+.list li a{
+    text-decoration: none;
+    text-align: center;
+}
+.list li a:visited{
+    color: black;
+}
+.img{
+    width: 100%;
+    height: auto;
+}
+.greetings a{
+    color: black;
+}
+.greetings a:visited{
+    color: black;
+}
+.greetings span{
+    font-weight: bold;
+    color: deeppink;
+}

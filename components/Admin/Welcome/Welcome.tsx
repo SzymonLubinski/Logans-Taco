@@ -1,17 +1,41 @@
+'use client'
+import {signOut} from "next-auth/react";
+import {useRouter} from "next/navigation";
 import styles from './Welcome.module.css'
+import User from "./User";
+import SlidingButton from "../../UI/SlidingButton";
+import Logo from "../../Main/Logo";
 
+export default async function Welcome() {
+    const router = useRouter();
 
-export default function Welcome () {
+    const logOutHandler = () => {
+        signOut();
+    }
+    const toMainSite = () => {
+        router.push('/');
+    }
+
     return (
         <div className={styles.welcome}>
-            <h1>Witaj Admin #1</h1>
-            <p>Miłej pracy w Logan's Taco</p>
-            <div className={styles.worker}>
-                <h3>Dane pracownika</h3>
-                <div>
-                    <p>Nazwa użytkownika: Admin #1</p>
-                    <p>Start Pracy: </p>
-                </div>
+            <header>
+                <Logo/>
+            </header>
+            <div className={styles.userInfo}>
+                <User/>
+                <p>W Panelu administratora możesz zapoznać się z
+                    aktualnymi zamówieniami, zatrudnionymi pracownikami
+                    oraz garścią informacji o firmie i pracownikach.
+                </p>
+                <p>Have Fun !</p>
+            </div>
+            <div>
+                <SlidingButton clickHandler={logOutHandler}
+                               detailsText={'Wyloguj'}
+                />
+                <SlidingButton clickHandler={toMainSite}
+                               detailsText={"Strona Główna"}
+                />
             </div>
         </div>
     )

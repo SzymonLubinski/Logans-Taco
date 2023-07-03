@@ -1,29 +1,49 @@
 "use client";
 
-import Image from "next/image";
+import {useContext, useEffect, useState} from "react";
 import styles from './Header.module.css';
-import Button from "../UI/Button";
+import ShowButton from "../UI/ShowButton";
 import {HeaderTypes} from "../models/Types";
+import Logo from "../Main/Logo";
+import {OrderContext} from "@/app/context/context";
 
-
-const logo = require('../../public/tacoLogo.png').default;
-const basket = require('../../public/koszyk.png').default;
+const cart = require('../../public/koszyk.png').default;
 const toggle = require('../../public/toggle.svg').default;
 
 
 export default function Header (props: HeaderTypes) {
+    const ctx = useContext(OrderContext);
+    const numberOfOrders = ctx.items
+        .reduce((curNumber, item) => {
+            return curNumber + item.amount;
+        }, 0);
+
+    const [spanAction, setSpanAction] = useState(false);
+    const spanStyles = `${styles.btn} ${spanAction ? styles.bump : ""}`
+
+    useEffect(() => {
+        if (ctx.items.length === 0){
+            return;
+        }
+        setSpanAction(true);
+
+        const timer = setTimeout(() => {
+            setSpanAction(false);
+        }, 300);
+        return () => {
+            clearTimeout(timer);
+        };
+    }, [ctx.items])
+
     return (
         <header className={styles.header}>
             <div>
-                <Button image={toggle} onShowMenu={props.onShowMenu}/>
+                <ShowButton image={toggle} onShowMenu={props.onShowMenu}/>
             </div>
-            <div className={styles.title}>
-                <h1>Logan's</h1>
-                <Image className={styles.logo} src={logo} alt="logo Logan's Taco"/>
-                <h1>Taco</h1>
-            </div>
-            <div>
-                <Button image={basket} onShowOrder={props.onShowOrder}/>
+            <Logo/>
+            <div className={styles.cart}>
+                <span className={spanStyles}>{numberOfOrders}</span>
+                <ShowButton image={cart} onShowOrder={props.onShowOrder}/>
             </div>
         </header>
     )

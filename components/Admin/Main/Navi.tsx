@@ -1,6 +1,8 @@
 import styles from './Navi.module.css';
 import Image from "next/image";
 import {NaviType} from "../../models/Types";
+import Tabs from "../Data/Tabs";
+import {useState} from "react";
 
 
 const userImage = require('../../../public/user-solid.svg').default;
@@ -9,7 +11,47 @@ const EmployeesImage = require('../../../public/user-group-solid.svg').default;
 const DataImage = require('../../../public/think-peaks.svg').default;
 
 
-export default function Navi (props: NaviType) {
+export default function Navi(props: NaviType) {
+    const [activeTab, setActiveTab] = useState('Welcome');
+    const activeTabHandler = (tab: string) => {
+        setActiveTab(tab);
+        props.OnChangeTab(tab);
+    }
+
+    const tabs = [
+        {tab: 'Welcome', image: userImage.src},
+        {tab: 'Orders', image: OrdersImage.src},
+        {tab: 'Employees', image: EmployeesImage.src},
+        {tab: 'Data', image: DataImage.src},
+    ];
+
+    const listItems = () => {
+        const checkActivity = (tab: string) => {
+            if (activeTab === tab) {
+                return `${styles.active}`;
+            } else {
+                return '';
+            }
+        }
+        return (
+            <ul>
+                {tabs.map((elVal) => (
+                    <li onClick={activeTabHandler.bind(null, elVal.tab)}
+                        key={elVal.tab}
+                        className={checkActivity(elVal.tab)}
+                    >
+                        <Image className={styles.img}
+                               src={elVal.image}
+                               alt={elVal.tab}
+                               width={50}
+                               height={50}
+                        />
+                        <p>{elVal.tab}</p>
+                    </li>
+                ))}
+            </ul>
+        )
+    }
 
     return (
         <div className={styles.navi}>
@@ -17,30 +59,7 @@ export default function Navi (props: NaviType) {
                 <h3>Admin #1</h3>
             </div>
             <div className={styles.links}>
-                <a href='#'>
-                    <div onClick={props.OnChangeTab.bind(null, 'welcome')}>
-                        <Image className={styles.img} src={userImage} alt='user'/>
-                        <p>Welcome</p>
-                    </div>
-                </a>
-                <a href='#'>
-                    <div onClick={props.OnChangeTab.bind(null, 'orders')}>
-                        <Image className={styles.img} src={OrdersImage} alt='user'/>
-                        <p>Orders</p>
-                    </div>
-                </a>
-                <a href='#'>
-                    <div onClick={props.OnChangeTab.bind(null, 'employees')}>
-                        <Image className={styles.img} src={EmployeesImage} alt='user'/>
-                        <p>Employees</p>
-                    </div>
-                </a>
-                <a href='#'>
-                    <div onClick={props.OnChangeTab.bind(null, 'data')}>
-                        <Image className={styles.img} src={DataImage} alt='user'/>
-                        <p>Data</p>
-                    </div>
-                </a>
+                {listItems()}
             </div>
         </div>
     )

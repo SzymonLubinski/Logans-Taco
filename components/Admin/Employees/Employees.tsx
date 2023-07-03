@@ -1,9 +1,13 @@
 import styles from './Employees.module.css';
 import NewEmployee from "./NewEmployee";
 import {EmployeeTypes} from "../../models/Types";
+import EmployeeCard from "./EmployeeCard";
+import Loading from "../../Portal/Loading";
 
 
-export default function Employees(props: {employees: EmployeeTypes[]}) {
+export default function Employees(
+    props: { employees: EmployeeTypes[], loadingScreen: any }
+) {
     return (
         <div className={styles.employees}>
             <div>
@@ -11,12 +15,14 @@ export default function Employees(props: {employees: EmployeeTypes[]}) {
                 <h3>Lista pracowników</h3>
                 <ul>
                     {props.employees.map(emp => (
-                        <li key={emp._id}>
-                            <h3>{emp.employeeName}, Umowa od: {emp.contractStarts}</h3>
-                        </li>
-                    ))}
+                        <EmployeeCard key={emp._id}
+                                      employee={emp}
+                                      loadingScreen={props.loadingScreen}
+
+                        />
+                        ))}
                 </ul>
-                <NewEmployee/>
+                <NewEmployee loadingScreen={props.loadingScreen}/>
             </div>
         </div>
     )

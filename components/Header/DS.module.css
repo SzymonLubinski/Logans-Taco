@@ -1,0 +1,17 @@
+.dashboardLinks{
+    margin: 20px auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.links {
+    width: 40%;
+}
+.aboutLinks{
+    width: 60%;
+}
+.aboutLinks span{
+    background: #EA5E4C;
+    color: purple;
+}

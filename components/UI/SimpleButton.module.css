@@ -1,0 +1,18 @@
+.btn{
+    font-family: "Comic Sans MS", Arial, Helvetica, sans-serif;
+    color: white;
+    background: #ca211a;
+    border-radius: 20px;
+    padding: 0.25rem 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    height: 80%;
+    width: 15vw;
+    min-width: 100px;
+    max-width: 200px;
+    margin-top: 10px;
+}
+.btn:hover,
+.btn:active {
+    background-color: #9d1914;
+}

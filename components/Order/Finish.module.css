@@ -18,7 +18,7 @@
 }
 .animatedObject{
     position: relative;
-    animation-name: example;
+    animation-name: truckDriving;
     animation-duration: 7s;
     top: 100px;
     left: -250%;
@@ -28,7 +28,7 @@
     width: 300px;
     height: 30px;
 }
-@keyframes example {
+@keyframes truckDriving {
     0%   {left: -250%; top:100px;}
     /*0%   {left: 0;}*/
     /*25%  {background-color:yellow; left:200px; top:0;}*/

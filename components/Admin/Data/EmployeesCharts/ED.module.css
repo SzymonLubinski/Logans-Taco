@@ -1,0 +1,15 @@
+.emp ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.emp ul li{
+    border: 3px solid black;
+    padding: 5px;
+    margin: 5px;
+}
+.emp ul li:hover{
+    background: purple;
+    cursor: pointer;
+}

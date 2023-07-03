@@ -1,0 +1,35 @@
+.card{
+    margin-top: 10px;
+    list-style: none;
+    border: 3px solid black;
+}
+.head{
+    text-align: center;
+    padding: 10px;
+    border-bottom: 3px solid purple;
+}
+.main{
+    display: flex;
+}
+.info{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+.info span{
+    font-weight: bold;
+}
+.delete{
+    width: 20%;
+}
+.delete button{
+    background: #e75d5d;
+    border: none;
+}
+.delete button:hover{
+    background: #cb2f2f;
+}
+.xMark{
+    width: 100%;
+    height: auto;
+}

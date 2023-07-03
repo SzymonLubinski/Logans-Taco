@@ -1,0 +1,36 @@
+.detailsOrder{
+    cursor: pointer;
+    display: block;
+    width: 200px;
+    height: 60px;
+    font-size: 18px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #333;
+    border: 2px solid #333;
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    transition: all .35s;
+}
+.detailsOrder:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 10%;
+    height: 100%;
+    background: #EEBB32;
+    transition: all .35s;
+}
+.detailsOrder:hover{
+    color: #fff;
+}
+.detailsOrder:hover:after{
+    width: 100%;
+    color: #fff;
+}
+.detailsOrder span{
+    position: relative;
+    z-index: 2;
+}

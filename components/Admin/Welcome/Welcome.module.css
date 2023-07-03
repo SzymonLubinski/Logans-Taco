@@ -2,7 +2,22 @@
     text-align: center;
     height: 100%;
 }
-.worker{
-    text-align: left;
-    margin-left: 10px;
+.welcome header{
+    background: #9AC142;
+    border-bottom: 3px solid #7C9B35;
+}
+.welcome header img{
+    height: 100px;
+}
+.userInfo{
+    padding: 30px 0;
+}
+.userInfo p{
+    margin: auto;
+    font-size: 24px;
+    width: 50%;
+}
+.userInfo button{
+    padding: 5px;
+    background: #e4e435;
 }

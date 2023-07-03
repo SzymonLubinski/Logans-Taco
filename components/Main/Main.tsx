@@ -2,7 +2,7 @@
 
 import {useState} from "react";
 
-import OrderContextProvider from "../context/context";
+import OrderContextProvider from "@/app/context/context";
 import Header from "../Header/Header";
 import Order from "../Order/Order";
 import Menu from "../Header/Menu";
@@ -11,7 +11,9 @@ import Gallery from "../Products/Gallery";
 import {MealType} from "../models/Types";
 
 
-export default function Main(props: { meals: MealType[] }): any {
+export default function Main(
+    props: { meals: MealType[], ratings: number[] }
+) {
     const [whichPortal, setWhichPortal] = useState({
         orderPortal: false,
         menuPortal: false,
@@ -68,7 +70,10 @@ export default function Main(props: { meals: MealType[] }): any {
                            onShow={onWhichPortalHandler.bind(null, 'finishPortal')}/>
                 }
                 {whichPortal.menuPortal &&
-                    <Menu onClose={onWhichPortalHandler.bind(null, 'clear')}/>
+                    <Menu onClose={onWhichPortalHandler.bind(null, 'clear')}
+                          ratings={props.ratings}
+                    />
+
                 }
                 {whichPortal.finishPortal &&
                     <Finish onClose={onWhichPortalHandler.bind(null, 'clear')}/>

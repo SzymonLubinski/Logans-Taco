@@ -89,21 +89,28 @@
 .form{
     text-align: right;
     margin: auto 0 auto;
-    display: flex;
-    flex-direction: column;
 }
-.form button{
-    font-family: "Comic Sans MS", Arial, Helvetica, sans-serif;
-    color: white;
-    background: #ca211a;
-    border: 1px solid #ca211a;
-    border-radius: 20px;
-    padding: 0.25rem 2rem;
-    font-weight: bold;
-    cursor: pointer;
+
+
+.addAnimation{
+    position: absolute;
+    font-size: 32px;
+    color: darkred;
+    animation-name: addItem;
+    animation-duration: 2s;
+    transform: translate(-30px, -20px);
+    visibility: hidden;
+
 }
-.form button:hover,
-.form button:active {
-    background-color: #9d1914;
-    border-color: #9d1914;
+@keyframes addItem {
+    0%   {
+        transform: translate(-30px, -20px);
+        visibility: visible;
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-30px, -70px);
+        opacity: 0;
+        visibility: hidden;
+    }
 }

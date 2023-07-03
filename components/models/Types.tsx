@@ -1,6 +1,6 @@
 import {ReactNode} from "react";
 import Order from "./order";
-
+import {Dayjs} from 'dayjs';
 
 export interface MealType {
     _id: string;
@@ -24,7 +24,7 @@ export interface ContactTypes{
     street: string;
 }
 export interface OnShowFinishType {
-    onShow: any;
+    onShow: (which?:string) => void;
 }
 export interface onCloseType{
     onClose?: () => void;
@@ -55,8 +55,11 @@ export interface ContactInputTypes {
 }
 export interface EmployeeTypes {
     _id: string;
-    employeeName: string;
-    contractStarts: string;
+    empNick: string;
+    contractType: string;
+    contractStart: string;
+    contractEnd: string;
+    salaryPerHour: number;
 }
 export interface OrderItemTypes{
     id: string;
@@ -73,10 +76,11 @@ export interface AdminOrderTypes{
     isSent: boolean;
     meals: ItemTypes[];
     totalAmount: number;
+    date: string;
 }
 export interface AllDataTypes{
-    employeesData: EmployeeTypes[];
     mealsData: MealType[];
+    employeesData: EmployeeTypes[];
     ordersData: AdminOrderTypes[];
 }
 export interface HeaderTypes {
@@ -111,4 +115,34 @@ export interface NaviType{
 }
 export interface FulfillmentType {
     fulfillment: boolean;
+}
+export interface ChartTypes{
+    key: number;
+    value: number
+}
+export interface PieTypes{
+    key: string;
+    value: number
+}
+export interface AddSalaryTypes{
+    periods: any;
+    month: number;
+    nick: string;
+    from: Dayjs;
+    to: Dayjs;
+    salary: number;
+}
+export interface TabsTypes{
+    text: string;
+    tab: string;
+}
+export interface TabTypes{
+    currTab: string,
+    tabs: TabsTypes[],
+    changeTab: (which: string) => void
+}
+export interface RegisterDataTypes{
+    email: string;
+    password: string;
+    name: string;
 }

@@ -1,15 +1,28 @@
 "use client";
 
-import React, {useRef, useContext} from "react";
-import {OrderContext} from "../context/context";
+import React, {useRef, useContext, useState} from "react";
+import {OrderContext} from "@/app/context/context";
 import Image from "next/image";
 import styles from './Product.module.css';
 import Input from "../UI/Input";
 import Tilt from './Tilt';
 import {MealType} from "../models/Types";
+import SimpleButton from "../UI/SimpleButton";
+
+
+class AnimatedObjects {
+    public addObject (amount: number){
+        return (
+            <span className={styles.addAnimation}>
+                +{amount}
+            </span>
+        )
+    }
+}
 
 
 export default function Product(props: MealType) {
+    const [animatedObjects, setAnimatedObjects] = useState<never[] | any[]>([]);
     const ctx = useContext(OrderContext);
     const amountInputRef = useRef<HTMLInputElement>(null);
 
@@ -22,10 +35,13 @@ export default function Product(props: MealType) {
             price: props.price,
             name: props.name,
         });
+
+        let obj = new AnimatedObjects().addObject(Number(amountInputRef.current!.value))
+
+        setAnimatedObjects(prev => [...prev, obj]);
     }
+
     const src = props.image;
-
-
     const options = {
         max: 25,
         speed: 400,
@@ -55,8 +71,15 @@ export default function Product(props: MealType) {
                     <p>{props.price} zł</p>
                 </div>
                 <form onSubmit={addToOrder} className={styles.form}>
+                    {animatedObjects.map((amount: number, i) => {
+                        return (
+                            <span key={i} className={styles.addAnimation}>
+                                {amount}
+                            </span>
+                        )
+                    })}
                     <Input ref={amountInputRef}/>
-                    <button className={styles.btn} type='submit'>Dodaj</button>
+                    <SimpleButton/>
                 </form>
             </div>
         </div>

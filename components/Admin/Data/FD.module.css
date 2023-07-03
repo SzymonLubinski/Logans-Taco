@@ -1,0 +1,27 @@
+.categories{
+    text-align: center;
+    margin: 20px auto;
+}
+.categories ul{
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    margin-top: 20px;
+}
+.categories li{
+    border: 3px solid black;
+    padding: 5px;
+}
+.categories li:hover{
+    background: purple;
+    cursor: pointer;
+}
+.active{
+    background: mediumpurple;
+}
+
+.charts{
+    width: 50%;
+    min-width: 500px;
+    margin: auto;
+}

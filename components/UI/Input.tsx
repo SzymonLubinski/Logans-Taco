@@ -7,8 +7,9 @@ import styles from './Input.module.css';
 type InputRef = React.HTMLProps<HTMLInputElement>
 
 const Input = React.forwardRef<HTMLInputElement, InputRef>((props, ref) => {
+
     return (
-        <div>
+        <div className={styles.divInput}>
             <label>Ilość: </label>
             <input className={styles.input}
                    defaultValue='1'

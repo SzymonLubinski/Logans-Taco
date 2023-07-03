@@ -1,0 +1,17 @@
+.starRating{
+    padding: 20px 0;
+}
+.starRating button{
+    height: 40px;
+
+}
+.btn{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
+

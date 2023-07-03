@@ -1,11 +1,12 @@
 import React, {useContext, useState} from "react";
-import {OrderContext} from "../context/context";
+import {OrderContext} from "@/app/context/context";
 import styles from './Order.module.css';
 import OrderItem from "./OrderItem";
 import Summary from "./Summary";
 import {Portal} from "../Portal/Portal";
 import {BackdropType, ItemTypes} from "../models/Types";
 import CloseButton from "../UI/CloseButton";
+import SlidingButton from "../UI/SlidingButton";
 
 
 export default function Order(props:BackdropType) {
@@ -63,12 +64,7 @@ export default function Order(props:BackdropType) {
                                 </p>
                             </div>
                             <div>
-                                <button className={styles.submitOrder}
-                                        onClick={visibleSummaryHandler}
-                                        type='submit'
-                                >
-                                    <span>Szczegóły zamówienia</span>
-                                </button>
+                                <SlidingButton clickHandler={visibleSummaryHandler} detailsText={'Szczegóły zamówienia'}/>
                             </div>
                         </div>
                     }

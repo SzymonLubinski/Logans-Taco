@@ -1,14 +1,13 @@
 import React, {useContext} from "react";
 import {useForm, SubmitHandler} from "react-hook-form";
 import styles from './Summary.module.css';
-import {OrderContext} from "../context/context";
+import {OrderContext} from "@/app/context/context";
 import {ContactTypes, OnShowFinishType} from "../models/Types";
 import ContactInput from "../UI/ContactInput";
 
 
 export default function Summary(props: OnShowFinishType) {
     const ctx = useContext(OrderContext);
-
     const {register, formState: {errors}, handleSubmit} = useForm<ContactTypes>();
     const onSubmit: SubmitHandler<ContactTypes> = async data => {
         props.onShow();

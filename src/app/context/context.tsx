@@ -1,7 +1,7 @@
 "use client";
 
 import React, {useReducer} from "react";
-import {defaultOrderType, ItemTypes, OrderContextObj, actionTypes} from "../models/Types";
+import {defaultOrderType, ItemTypes, OrderContextObj, actionTypes} from "../../../components/models/Types";
 
 
 export const OrderContext = React.createContext<OrderContextObj>({

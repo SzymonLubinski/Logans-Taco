@@ -1,0 +1,38 @@
+.loginSite{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.loginSite form{
+    border: 3px solid purple;
+    padding: 10px;
+}
+.loginSite form div{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.btn{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+.toLogin{
+    margin-top: 20px;
+}
+
+
+.loginSite header{
+    position: absolute;
+    top: 120px;
+    border: 3px solid #7C9B35;
+    border-radius: 30px;
+    background: #9AC142;
+    width: 70%;
+    height: 100px;
+}
+.loginSite header img{
+    height: 100px;
+}

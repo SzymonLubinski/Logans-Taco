@@ -8,7 +8,6 @@ export async function POST(request: Request) {
     const data = await request.json()
 
     let {items, totalAmount, freeDelivery, contact} = data;
-
     // DATABASE
     const mongoClient = await clientPromise;
     try {
@@ -29,12 +28,13 @@ export async function POST(request: Request) {
                 apartment: contact.apartment,
             },
             isSent: false,
+            date: new Date(),
         })
         console.log('dodano?')
     } catch (err) {
         console.log(err);
     } finally {
-        await mongoClient.close();
+        // await mongoClient.close();
     }
 
 
@@ -110,5 +110,7 @@ export async function POST(request: Request) {
         console.log(err);
         console.log('(EMAIL), we have a bug step 2')
         return NextResponse.json({ data })
+    } finally {
+
     }
 }

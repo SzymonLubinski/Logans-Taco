@@ -1,4 +1,4 @@
-
+import { supports-color } from "supports-color";
 import { MongoClient } from 'mongodb';
 
 if (!process.env.MONGODB_URI) {

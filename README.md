@@ -3,7 +3,7 @@ I present my first website created in TypeScript. This restaurant's website is i
 
 # Technologies
 - JavaScript
-- TypeScipt
+- TypeScript
 - React.js
 - Next.js
 - MongoDB

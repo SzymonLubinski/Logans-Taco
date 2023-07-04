@@ -1,5 +1,4 @@
-// @ts-nocheck
-
+import { supportsColor } from "supports-color";
 import { MongoClient } from 'mongodb';
 
 if (!process.env.MONGODB_URI) {

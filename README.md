@@ -37,5 +37,6 @@ Have Fun!
 
 # Future
 I'll create some new options in the future:
+- phone compatible site
 - More analytical data
 - Better rating options

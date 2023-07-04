@@ -3,14 +3,25 @@ I present my first website created in TypeScript. This restaurant's website is i
 
 # Technologies
 - JavaScript
+- TypeScipt
 - React.js
 - Next.js
 - MongoDB
+- Prisma
 - CSS
 
 # Libraries
 - Nodemailer
 - VanillaTilt
+- next-auth
+- axios
+- bcrypt
+- chart.js
+- dayjs
+- dayjs-business-days2
+- react-hook-form
+- react-hot-toast
+- react-icons
 
 # Link
 Link to visit my website: https://logans-taco.vercel.app/
@@ -26,7 +37,5 @@ Have Fun!
 
 # Future
 I'll create some new options in the future:
-- Admin dashboard
-- Login functions
-- Analytical data
-- Information about orders for customers
+- More analytical data
+- Better rating options
